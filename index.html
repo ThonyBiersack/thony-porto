@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthony Suryadjie | Backend Developer Portfolio</title>
+
+    <!-- Meta tags for SEO -->
+    <meta name="description"
+        content="Portfolio of Anthony Suryadjie - Junior Backend Developer specializing in Node.js, Express.js, Hapi.js, NoSQL, and JWT/RBAC security. Building clean, scalable APIs.">
+    <meta name="keywords"
+        content="Backend Developer, Node.js, Express, Hapi, JWT, RBAC, NoSQL, Web Developer, Portfolio">
+    <meta name="author" content="Anthony Suryadjie">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Highlight.js CSS for Dark Themes -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css">
+
+    <!-- Link External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Ambient Grid & Scanlines -->
+    <div class="scanlines"></div>
+    <div class="matrix-grid"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+
+    <!-- HEADER & NAVBAR -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">
+                <span class="logo-dot"></span>
+                <span>Anthony Suryadjie<span class="glow-text">.sh</span></span>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active">// home</a></li>
+                <li><a href="#skills" class="nav-link">// skills</a></li>
+                <li><a href="#projects" class="nav-link">// projects</a></li>
+                <li><a href="#api-demo" class="nav-link">// api-demo</a></li>
+                <li><a href="#about" class="nav-link">// about</a></li>
+                <li><a href="#contact" class="nav-link">// contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="container hero-layout">
+            <div class="reveal">
+                <div class="hero-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        style="animation: pulse 1s infinite alternate;">
+                        <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                    Ready for Development
+                </div>
+                <h1 class="hero-title">
+                    Building <span class="glow-text">Scalable</span> &amp; <span class="glow-text">Secure</span>
+                    Backends.
+                </h1>
+                <p class="hero-desc">
+                    Junior backend developer with a solid understanding of REST API architectures, JWT authentication,
+                    RBAC authorization, and database optimization.
+                </p>
+                <div class="hero-cta">
+                    <a href="#api-demo" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        Test API Live
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">// View Projects</a>
+                </div>
+            </div>
+
+            <!-- Terminal Window (Boot Sequence Simulation) -->
+            <div class="terminal-window reveal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <div class="t-btn t-close"></div>
+                        <div class="t-btn t-min"></div>
+                        <div class="t-btn t-max"></div>
+                    </div>
+                    <div class="terminal-title">bash - session@dev-server</div>
+                    <div style="width: 42px;"></div>
+                </div>
+                <div class="terminal-body" id="terminal-boot">
+                    <div class="terminal-input-line">
+                        <span class="terminal-prompt">$</span>
+                        <span id="boot-typed"></span><span class="terminal-cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS & STACK (SVG ARCHITECTURE) -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills &amp; Architecture Flow</h2>
+
+            <div class="skills-layout">
+                <!-- SVG Diagram Column -->
+                <div class="arch-diagram-wrapper reveal">
+                    <div class="arch-diagram-title">
+                        <span>Interactive System Architecture Flow</span>
+                    </div>
+
+                    <!-- SVG Architecture Canvas -->
+                    <svg viewBox="0 0 500 320" class="arch-svg" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+                                orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" class="flow-arrow" />
+                            </marker>
+                        </defs>
+
+                        <!-- Connecting Flows -->
+                        <path id="flow1" d="M 90 160 L 140 160" class="flow-line active" marker-end="url(#arrow)" />
+                        <path id="flow2" d="M 230 160 L 275 160" class="flow-line active" marker-end="url(#arrow)" />
+                        <path id="flow3" d="M 365 160 L 410 160" class="flow-line active" marker-end="url(#arrow)" />
+
+                        <!-- Back flows/Feedback paths -->
+                        <path id="flow-back" d="M 410 175 C 320 220, 180 220, 90 175" class="flow-line"
+                            marker-end="url(#arrow)" style="opacity: 0.4;" />
+
+                        <!-- Node 1: CLIENT -->
+                        <g class="interactive-node active" id="node-client" data-tech="client">
+                            <rect x="10" y="120" width="80" height="80" class="node-bg" />
+                            <!-- Browser Screen Icon SVG -->
+                            <svg x="35" y="130" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00f5ff"
+                                stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="18" rx="2" ry="2" />
+                                <line x1="2" y1="8" x2="22" y2="8" />
+                                <line x1="6" y1="5" x2="6.01" y2="5" />
+                                <line x1="10" y1="5" x2="10.01" y2="5" />
+                            </svg>
+                            <text x="50" y="175" text-anchor="middle" class="node-text">CLIENT</text>
+                            <text x="50" y="188" text-anchor="middle" class="node-text-sub">HTML/CSS/JS</text>
+                        </g>
+
+                        <!-- Node 2: API ROUTER -->
+                        <g class="interactive-node" id="node-api" data-tech="api">
+                            <rect x="140" y="120" width="90" height="80" class="node-bg" />
+                            <!-- Router/Gateway Icon SVG -->
+                            <svg x="170" y="130" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00f5ff"
+                                stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="8" rx="2" />
+                                <rect x="2" y="14" width="20" height="8" rx="2" />
+                                <line x1="6" y1="6" x2="18" y2="6" />
+                                <line x1="6" y1="18" x2="18" y2="18" />
+                                <path d="M 12 10 L 12 14" />
+                            </svg>
+                            <text x="185" y="175" text-anchor="middle" class="node-text">API GATEWAY</text>
+                            <text x="185" y="188" text-anchor="middle" class="node-text-sub">Express / Hapi.js</text>
+                        </g>
+
+                        <!-- Node 3: AUTH / JWT MIDDLEWARE -->
+                        <g class="interactive-node" id="node-auth" data-tech="auth">
+                            <rect x="275" y="120" width="90" height="80" class="node-bg" />
+                            <!-- Shield/Lock Icon SVG -->
+                            <svg x="305" y="130" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00f5ff"
+                                stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <circle cx="12" cy="11" r="2" />
+                                <path d="M12 13v3" />
+                            </svg>
+                            <text x="320" y="175" text-anchor="middle" class="node-text">AUTH GUARD</text>
+                            <text x="320" y="188" text-anchor="middle" class="node-text-sub">JWT &amp; RBAC</text>
+                        </g>
+
+                        <!-- Node 4: DATABASE -->
+                        <g class="interactive-node" id="node-db" data-tech="db">
+                            <rect x="410" y="120" width="80" height="80" class="node-bg" />
+                            <!-- Database Icon SVG -->
+                            <svg x="435" y="130" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00f5ff"
+                                stroke-width="1.5">
+                                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+                            </svg>
+                            <text x="450" y="175" text-anchor="middle" class="node-text">DATABASE</text>
+                            <text x="450" y="188" text-anchor="middle" class="node-text-sub">MongoDB / NoSQL</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Detail Panel Column -->
+                <div class="reveal">
+                    <div class="tech-info-panel" id="tech-info-panel">
+                        <div>
+                            <div class="panel-header">
+                                <h3 class="panel-title" id="panel-title">Client-Side Layer</h3>
+                                <span class="panel-tag" id="panel-tag">Frontend Integration</span>
+                            </div>
+                            <div class="panel-body" id="panel-body">
+                                <p>As a backend developer, I understand how clients interact with APIs over the
+                                    HTTP/HTTPS protocols. I am familiar with DOM manipulation using Vanilla JS,
+                                    AJAX/Fetch requests, and JSON response integration.</p>
+                                <p>The client component dispatches requests containing payloads, query parameters, path
+                                    variables, and authorization headers (Bearer Token) to be processed by the server.
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="tech-list-tags" id="panel-tags">
+                                <span class="tech-tag highlight">HTML5</span>
+                                <span class="tech-tag highlight">CSS3</span>
+                                <span class="tech-tag highlight">JavaScript ES6</span>
+                                <span class="tech-tag">Fetch API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="projects-grid">
+                <!-- Project: Bookshelf API -->
+                <div class="project-card reveal">
+                    <div class="project-top">
+                        <div class="project-meta-row">
+                            <div class="project-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                                </svg>
+                            </div>
+                            <div class="project-stats">
+                                <span class="stat-badge endpoints" title="Endpoint Count">13 Endpoints</span>
+                                <span class="stat-badge auth" title="Auth Method">JWT + RBAC</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Bookshelf REST API</h3>
+                        <p class="project-desc">
+                            A full CRUD REST API for managing a personal bookshelf. Built with Hapi.js, featuring
+                            JWT authentication, role-based access control (admin & user), and structured book
+                            data management.
+                        </p>
+                        <div class="project-tech">
+                            <span>Node.js</span>
+                            <span>Hapi.js</span>
+                            <span>JWT</span>
+                            <span>RBAC</span>
+                            <span>REST API</span>
+                        </div>
+                    </div>
+                    <div class="project-bottom">
+                        <a href="https://github.com/ThonyBiersack/bookshelfAPI" target="_blank"
+                            rel="noopener noreferrer" class="project-link">
+                            <span>View Source Code</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project: WarungKas -->
+                <div class="project-card reveal">
+                    <div class="project-top">
+                        <div class="project-meta-row">
+                            <div class="project-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M3 3h18v18H3z" />
+                                    <path d="M12 8v8M8 12h8" />
+                                </svg>
+                            </div>
+                            <div class="project-stats">
+                                <span class="stat-badge endpoints"
+                                    style="color: var(--green); border-color: rgba(16, 185, 129, 0.2);"
+                                    title="Database Engine">SQLite DB</span>
+                                <span class="stat-badge auth"
+                                    style="color: var(--cyan); border-color: var(--cyan-dim);"
+                                    title="App Mode">Offline-First</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">WarungKas - Cashier POS App</h3>
+                        <p class="project-desc">
+                            An offline-first cashier and shop manager app built with Flutter. Designed for local
+                            merchants, featuring QR/barcode scanning, financial reports, and PDF receipt printing.
+                        </p>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>SQLite</span>
+                            <span>PDF Engine</span>
+                            <span>Cryptography</span>
+                        </div>
+                    </div>
+                    <div class="project-bottom">
+                        <a href="https://github.com/ThonyBiersack/warungkas" target="_blank"
+                            rel="noopener noreferrer" class="project-link">
+                            <span>View Source Code</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE API DEMO (INTERACTIVE CONSOLE) -->
+    <section id="api-demo">
+        <div class="container">
+            <h2 class="section-title">Live API Demo Console</h2>
+
+            <div class="api-layout">
+                <!-- Controls Side -->
+                <div class="api-controls-panel reveal">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        Select a demo endpoint to run local simulations on our virtual mock router. The simulator
+                        processes JWT tokens and executes simulated Role-Based Access Control (RBAC) logic.
+                    </p>
+
+                    <div class="form-group">
+                        <label>Endpoint Quick Presets (bookshelfAPI)</label>
+                        <div class="preset-routes">
+                            <!-- Preset 1: Register -->
+                            <button class="preset-route-btn active" data-method="POST" data-url="/register"
+                                data-body='{\n  "email": "anthony@dev.work",\n  "username": "anthony",\n  "password": "password123"\n}'>
+                                <span class="route-method-badge badge-post">POST</span>
+                                <span class="route-path">/register</span>
+                                <span class="route-role-req">Public</span>
+                            </button>
+
+                            <!-- Preset 2: Login -->
+                            <button class="preset-route-btn" data-method="POST" data-url="/login"
+                                data-body='{\n  "username": "anthony",\n  "password": "password123"\n}'>
+                                <span class="route-method-badge badge-post">POST</span>
+                                <span class="route-path">/login</span>
+                                <span class="route-role-req">Public</span>
+                            </button>
+
+                            <!-- Preset 3: Add Book -->
+                            <button class="preset-route-btn" data-method="POST" data-url="/books"
+                                data-body='{\n  "title": "Bumi Manusia",\n  "year": 1980,\n  "author": "Pramoedya Ananta Toer",\n  "summary": "Sebuah novel sejarah...",\n  "publisher": "Hasta Mitra",\n  "pageCount": 500,\n  "readPage": 100,\n  "reading": true\n}'>
+                                <span class="route-method-badge badge-post">POST</span>
+                                <span class="route-path">/books</span>
+                                <span class="route-role-req">Auth</span>
+                            </button>
+
+                            <!-- Preset 4: Get Books -->
+                            <button class="preset-route-btn" data-method="GET" data-url="/books" data-body="">
+                                <span class="route-method-badge badge-get">GET</span>
+                                <span class="route-path">/books</span>
+                                <span class="route-role-req">Auth</span>
+                            </button>
+
+                            <!-- Preset 5: Get Book By ID -->
+                            <button class="preset-route-btn" data-method="GET" data-url="/books/BOOK_ID_HERE"
+                                data-body="">
+                                <span class="route-method-badge badge-get">GET</span>
+                                <span class="route-path">/books/:id</span>
+                                <span class="route-role-req">Auth</span>
+                            </button>
+
+                            <!-- Preset 6: Update Book -->
+                            <button class="preset-route-btn" data-method="PUT" data-url="/books/BOOK_ID_HERE"
+                                data-body='{\n  "title": "Bumi Manusia (Revised)",\n  "year": 1980,\n  "author": "Pramoedya Ananta Toer",\n  "summary": "Novel sejarah Indonesia...",\n  "publisher": "Hasta Mitra",\n  "pageCount": 500,\n  "readPage": 500,\n  "reading": false\n}'>
+                                <span class="route-method-badge badge-put">PUT</span>
+                                <span class="route-path">/books/:id</span>
+                                <span class="route-role-req">Auth</span>
+                            </button>
+
+                            <!-- Preset 7: Delete Book -->
+                            <button class="preset-route-btn" data-method="DELETE" data-url="/books/BOOK_ID_HERE"
+                                data-body="">
+                                <span class="route-method-badge badge-delete">DEL</span>
+                                <span class="route-path">/books/:id</span>
+                                <span class="route-role-req">Auth</span>
+                            </button>
+
+                            <!-- Preset 8: Get User Books -->
+                            <button class="preset-route-btn" data-method="GET" data-url="/user/books" data-body="">
+                                <span class="route-method-badge badge-get">GET</span>
+                                <span class="route-path">/user/books</span>
+                                <span class="route-role-req">Auth</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <form id="api-console-form" onsubmit="return false;">
+                        <div class="form-group">
+                            <label>HTTP Request</label>
+                            <div class="input-row">
+                                <select class="api-select-method" id="api-method">
+                                    <option value="GET">GET</option>
+                                    <option value="POST" selected>POST</option>
+                                    <option value="PUT">PUT</option>
+                                    <option value="DELETE">DELETE</option>
+                                </select>
+                                <input type="text" class="api-input-url" id="api-url" value="/register"
+                                    placeholder="/resource">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Authorization Header</label>
+                            <input type="text" class="api-input-text" id="api-auth-header"
+                                placeholder="Bearer [token_here]">
+                            <div style="display: flex; gap: 0.5rem; justify-content: space-between;">
+                                <button type="button" class="token-helper-btn" id="btn-inject-auto"
+                                    style="border-color: var(--cyan); color: var(--cyan);">Auto Inject Token</button>
+                                <button type="button" class="token-helper-btn" id="btn-clear-token"
+                                    style="background: rgba(255, 51, 102, 0.1); border-color: rgba(255, 51, 102, 0.3); color: var(--red);">Clear
+                                    Header</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="body-form-group">
+                            <label>JSON Request Body</label>
+                            <textarea class="api-textarea" id="api-req-body" placeholder="{}"></textarea>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" id="btn-send-request"
+                            style="width: 100%; justify-content: center; margin-top: 1rem;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            Send Request
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Output Terminal Side -->
+                <div class="api-terminal-panel reveal">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <div class="t-btn t-close"></div>
+                            <div class="t-btn t-min"></div>
+                            <div class="t-btn t-max"></div>
+                        </div>
+                        <div class="terminal-tabs">
+                            <button class="terminal-tab-btn active" id="btn-tab-response">response</button>
+                            <button class="terminal-tab-btn" id="btn-tab-db">database explorer</button>
+                        </div>
+                        <div style="width: 42px;"></div>
+                    </div>
+
+                    <!-- Response Tab Body -->
+                    <div id="panel-response-container">
+                        <!-- Server Middlewares log output stream -->
+                        <div class="api-terminal-logs" id="terminal-logs">
+                            <div class="log-entry info">[SERVER] Simulated Bookshelf API Router is running...</div>
+                            <div class="log-entry info">[SERVER] Ready to receive mock HTTP request.</div>
+                        </div>
+
+                        <!-- HTTP Response -->
+                        <div class="api-response-wrapper">
+                            <div class="api-response-header">
+                                <div>RESPONSE HEADERS</div>
+                                <div class="api-status-indicator status-success" id="api-status-label">
+                                    <span class="api-status-dot"></span>
+                                    <span id="api-status-text">200 OK</span>
+                                </div>
+                            </div>
+                            <pre><code class="language-json response-code-block" id="api-response-code">{}</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- DB State Tab Body -->
+                    <div id="panel-db-container" style="display: none;">
+                        <div class="db-wrapper"
+                            style="padding: 1.25rem 1.5rem; height: calc(100% - 30px); display: flex; flex-direction: column; gap: 0.75rem;">
+                            <!-- Database Engine Switcher -->
+                            <div class="db-switcher-row"
+                                style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <label
+                                        style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin: 0;">DB
+                                        Engine:</label>
+                                    <select id="db-engine-select"
+                                        style="background: var(--bg-terminal); border: 1px solid var(--border-color); color: var(--cyan); font-family: var(--font-mono); font-size: 0.8rem; padding: 0.15rem 0.5rem; border-radius: 4px; outline: none; cursor: pointer;">
+                                        <option value="mongodb">MongoDB (Bookshelf)</option>
+                                        <option value="sqlite">SQLite (WarungKas)</option>
+                                    </select>
+                                </div>
+                                <span class="glow-text" id="db-conn-status"
+                                    style="color: var(--green); font-family: var(--font-mono); font-size: 0.8rem;">●
+                                    CONNECTED</span>
+                            </div>
+
+                            <!-- SQLite Preset Queries panel (hidden by default) -->
+                            <div id="sqlite-queries-panel" style="display: none; flex-direction: column; gap: 0.5rem;">
+                                <div
+                                    style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+                                    Quick SQL Actions (warungkas.db):</div>
+                                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                    <button class="sql-query-btn" data-query="SELECT * FROM products;">Get All
+                                        Products</button>
+                                    <button class="sql-query-btn"
+                                        data-query="SELECT * FROM products WHERE stock < 5;">Low Stock Warn</button>
+                                    <button class="sql-query-btn"
+                                        data-query="SELECT * FROM transactions ORDER BY timestamp DESC LIMIT 5;">Recent
+                                        Sales</button>
+                                    <button class="sql-query-btn"
+                                        data-query="SELECT SUM(profit) AS total_profit FROM transactions;">Calculate
+                                        Profits</button>
+                                </div>
+                            </div>
+
+                            <!-- JSON Schema representation -->
+                            <pre
+                                style="flex-grow: 1; overflow-y: auto; margin: 0; background: rgba(0,0,0,0.2); border-radius: 4px; border: 1px solid var(--border-color);"><code class="language-json response-code-block" id="api-db-code">{}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container about-layout">
+            <div class="reveal">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p class="about-paragraph">
+                        Hi! I am a junior backend developer with a deep passion for server-side architecture. I believe
+                        that <span class="highlight">the best way to learn is by directly building real systems</span>
+                        that are fully operational.
+                    </p>
+                    <p class="about-paragraph">
+                        I spend my days writing routing handlers, structuring database schemas, securing endpoints with
+                        encryption/JWT authentication middlewares, and ensuring data flows are protected by role-based
+                        access control (RBAC).
+                    </p>
+                    <p class="about-paragraph">
+                        While I recognize I am at the early stages of my career path, I am constantly driven to explore
+                        server scalability, clean code architecture, and detailed backend logging to facilitate easy
+                        system monitoring.
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal">
+                <div class="terminal-bio-card">
+                    <div class="terminal-header"
+                        style="margin: -2rem -2rem 1.5rem -2rem; border-top-left-radius: 11px; border-top-right-radius: 11px;">
+                        <div class="terminal-buttons">
+                            <div class="t-btn t-close"></div>
+                            <div class="t-btn t-min"></div>
+                            <div class="t-btn t-max"></div>
+                        </div>
+                        <div class="terminal-title">identity.json</div>
+                        <div></div>
+                    </div>
+
+                    <div class="bio-line">
+                        <span class="bio-comment">// Basic Profile Information</span>
+                    </div>
+                    <div class="bio-line">
+                        <span class="bio-key">"name"</span>: <span class="bio-val">"Anthony Suryadjie"</span>,
+                    </div>
+                    <div class="bio-line">
+                        <span class="bio-key">"role"</span>: <span class="bio-val">"Junior Backend Developer"</span>,
+                    </div>
+                    <div class="bio-line">
+                        <span class="bio-key">"focus_areas"</span>: [
+                        <span class="bio-val">"RESTful APIs"</span>,
+                        <span class="bio-val">"Database Architecture"</span>,
+                        <span class="bio-val">"Backend Security"</span>
+                        ],
+                    </div>
+                    <div class="bio-line">
+                        <span class="bio-key">"current_learning"</span>: [
+                        <span class="bio-val">"Message Queues (RabbitMQ)"</span>,
+                        <span class="bio-val">"Docker Containers"</span>
+                        ],
+                    </div>
+                    <div class="bio-line">
+                        <span class="bio-key">"status"</span>: <span class="bio-val">"Actively building &amp; seeking
+                            junior roles"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container reveal">
+            <h2 class="section-title" style="justify-content: center; margin-bottom: 1rem;">Connect Server</h2>
+            <p class="contact-subtitle">Interested in discussing backend projects or have a Junior Developer opening?
+                Feel free to contact me.</p>
+
+            <div class="contact-links">
+                <!-- GitHub -->
+                <a href="https://github.com/ThonyBiersack" target="_blank" rel="noopener noreferrer"
+                    class="contact-card">
+                    <div class="contact-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="contact-card-title">GitHub</span>
+                    <span class="contact-card-val">github.com/ThonyBiersack</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/anthony-suryadjie-500063200" target="_blank" rel="noopener noreferrer"
+                    class="contact-card">
+                    <div class="contact-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </div>
+                    <span class="contact-card-title">LinkedIn</span>
+                    <span class="contact-card-val">linkedin.com/in/anthony-suryadjie</span>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:anthonydjie.work@gmail.com" class="contact-card">
+                    <div class="contact-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <span class="contact-card-title">Direct Connection</span>
+                    <span class="contact-card-val">anthonydjie.work@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-layout">
+            <div>
+                &copy; 2026 Anthony Suryadjie. All rights reserved.
+            </div>
+            <div>
+                written in <span class="text-mono glow-text">Js/HTML</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Highlight.js JS via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+
+    <!-- WEBSITE SCRIPTS -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>
