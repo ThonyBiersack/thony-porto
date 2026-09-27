@@ -26,7 +26,7 @@ if (window.innerWidth >= 1024) {
     });
     
     // Hover effect on interactives
-    const interactives = document.querySelectorAll('a, button, select, input, textarea, .interactive-node');
+    const interactives = document.querySelectorAll('a, button, select, input, textarea, .interactive-node, .tool-item');
     interactives.forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursor.style.borderColor = '#ffffff';
