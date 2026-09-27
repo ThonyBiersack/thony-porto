@@ -810,7 +810,14 @@ header.scrolled {
     background-color: rgba(5, 5, 10, 0.4);
     border-top: 1px solid var(--border-color);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-bottom .project-link.single-link {
+    margin-left: auto;
 }
 
 .project-link {
@@ -827,6 +834,16 @@ header.scrolled {
 .project-link:hover {
     color: var(--cyan);
     text-shadow: 0 0 5px var(--cyan-glow);
+}
+
+.project-link.live-link {
+    color: var(--cyan);
+    font-weight: 500;
+}
+
+.project-link.live-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px var(--cyan-glow);
 }
 
 /* LIVE API DEMO SECTION */
